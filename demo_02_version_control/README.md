@@ -21,7 +21,7 @@ The repository for a course called "ECP3004S21" is shown here:
 
 <img src="Images/GitHubBeforeRefresh.png" width="750"/>
 
-You will find a similar page called "QMB6358F21" for this course. 
+You will find a similar page called "QMB6358F23" for this course. 
 In addition, you will create your own repository, 
 where you will store your code for the activities in this course. 
 
@@ -34,7 +34,7 @@ In particular, the three main approaches are outlined below:
   The downside is that it is not scalable, 
   in that each file must be uploaded manually, one at a time. 
   This is the method we will use to get familiar with GitHub. 
-* *Through a GitHub Desktop:* This is freely-available, user-friendly software that
+* *Through GitHub Desktop:* This is freely-available, user-friendly software that
   allows you to contribute code to a repository after writing software
   on a corresponding folder on your computer. 
   You do your work as you need to and at the end of each coding session, 
@@ -64,9 +64,15 @@ which records the set of changes in memory to store the version of your code
 at a certain checkpoint. 
 The committed files sit on your local machine, such as your laptop, 
 waiting to be added to the repository. 
-Typically, the new files and the changes to existing files, 
+Typically, the new files and the changes to existing files
+are related in some way that makes sense to the coder (you) or your users.
+It can be to fix a bug or to add new functionality. 
+In any case, try to group changes together so that each commit leaves the code in a state
+that is functional and the commit defines a checkpoint that allows you to revert back 
+in case you want to reverse changes in the future. 
 The next step is to *push* your changes to the online repository, 
-which makes a permanant 
+which makes a permanent change to the online repository, 
+thereby making those changes available to other coders and the users of your code. 
 
 <img src="Images/GitHub_Workflow.jpg" width="1000"/>
 
@@ -104,7 +110,7 @@ or the main branch.
 In many cases, you will not want to make edits to the master branch when you are developing new code, so you would [create another branch of the repository](https://help.github.com/en/articles/creating-and-deleting-branches-within-your-repository).
 Once you have tested your code, it can be pulled to the master branch by [Creating a pull request](https://help.github.com/en/articles/creating-a-pull-request).
 When you are the only contributor, and the code is not running
-on a production environment, as for your assignments, 
+in a production environment, as for your assignments, 
 you might simply push to the main or master branch.
 
 
@@ -120,7 +126,8 @@ As such, you would not use it for your assignments.
 
 ### Synching your fork
 
-If other software engineers have edited the original repository, you will want to update those changes to the version in your repository. This is called synching your fork. Some links to help with this are found in [Syncing a fork](https://help.github.com/en/articles/syncing-a-fork) and a concise version is found [here](https://gist.github.com/CristinaSolana/1885435). Notice, that this advice is stated in terms of the relevant commands through a terminal, instead of a point-and-click interface.
+If other software engineers have edited the original repository, you will want to update those changes to the version in your repository. This is called synching your fork. Some links to help with this are found in [Syncing a fork](https://help.github.com/en/articles/syncing-a-fork). 
+Notice, that this advice is stated in terms of the relevant commands through a terminal, instead of a point-and-click interface.
 With this approach, GitHub is a much more versatile tool.
 
 ## Working in Parallel in Separate Branches
@@ -132,7 +139,7 @@ The default branch is called either *master* or *main* but you may choose any na
 for the new branch, which could refer to you (the user making the changes)
 or to the nature of the modifications to the code in the repo. 
 You must be a collaborator of the repo to modify the repo in this way. 
-This can be done by clicking the branch button (originally labeled master) 
+This can be done by clicking the branch button (originally labeled either master or main) 
 and typing in the new branch name. 
 You will have to toggle the branch button to switch between branches. 
 Further instructions are available in this page about [managing branches](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/managing-branches).
@@ -241,8 +248,8 @@ changes to your online repository.
 
 <img src="Images/GitHubPush.png" width="750"/>
 
-After the changes are pushed, your local repository, 
-on your computer, should have the same contents as the remote
+After the changes are pushed, your local repository 
+(on your computer) should have the same contents as the remote
 repository, the version online. 
 
 <img src="Images/GitHubPushed.png" width="750"/>
@@ -388,14 +395,14 @@ where you would get the url in the same way you would to clone the original upst
 9. Now you can pull new content from the upstream to your local machine. 
 
 ```
-git pull upstream master
+git pull upstream main
 ```
-where the pull is from the master branch of the upstream repo and not the orign. 
+where the pull is from the main branch of the upstream repo and not the origin. 
 
 10. Now these updates are on your local machine but have not been pushed to your mirror of the repo. 
 
 ```
-git push origin master
+git push origin main
 ```
 will work the same as for any other content you add, except these are already added and committed to the upstream repo. 
 
@@ -428,8 +435,8 @@ For forked repos, the above commands can be modified with ```origin``` swapped f
 For example, when your instructor adds new content, pull those changes to your local machine and push them to your mirror of the repo:
 
 ```
-git pull upstream master
-git push origin master
+git pull upstream main
+git push origin main
 ```
 
 ### Updates to Your Local Copy
@@ -439,7 +446,7 @@ When you are working on your own coding project, add commit and push those chang
 ```
 git add .
 git commit -m 'Describe changes here'
-git push origin master
+git push origin main
 ```
 
 This command will not work if your local copy is not up to date. 
@@ -449,7 +456,7 @@ This command will not work if your local copy is not up to date.
 This command is used when you want to pull any changes from other contributors (such as group members on a team project) or when you change devices. In both of these cases, your current device will not have the most recent copy. 
 
 ```
-git pull origin master
+git pull origin main
 ```
 
 As mentioned above, if you want to push updates and your version is not current, you will have to pull the recent changes before you can push your updates to the repo. 
@@ -492,7 +499,7 @@ It is as if you reversed those changes manually and then added and committed the
 
 
 P.S. This example was not the student's fault in any way. 
-I aciddentally pushed his content to the upstream instead of the origin of his mirror. 
+I accidentally pushed his content to the upstream instead of the origin of his mirror. 
 It happens to everyone...eventually. 
 Now we know how to fix it. 
 
