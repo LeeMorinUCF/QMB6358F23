@@ -1,7 +1,40 @@
 
-# SQL in Python: Introduction
+# Interacting with Databases Using SQL: An Introduction Using Python
+
+In this section, we will learn how information can be stored, 
+retrieved and organized using databases. 
+Businesses and other organizations rely heavily on databases to keep track of information 
+for many accounting and payroll functions.
+Your very own information is stored in many databases.
+For example, the IRS keeps a record of your tax information by 
+recording amounts in the fields of your tax return, 
+your vital statistics, and the primary key is your social security number. 
+If you have a driver's license, the DMV keeps a record of your vehicles, 
+any tickets you may have received, your vital statistics, 
+and these are indexed by your driver's license number as the primary key. 
+The same is true for any online purchases you make: 
+your order details, your address and your purchase history 
+are all stored in a database with some form of customer id number and order number. 
+The primary reason for a business analyst or data scientist to use databases
+is to generate a dataset from the information stored in databases. 
+
+The primary tool that we will use is the Python module ```sqlite3```. 
+SQL is an acronym for *Structured Query Language*, 
+which is either pronounced "S-Q-L" or "sequel". 
+It is a language or, more precisely, a set of dialects that are used to 
+execute commands called *queries* using *relational databases*. 
+There exist many dialects of SQL and in fact, many other database structures
+that do not fall under the SQL paradigm. 
+However, SQL is ubiquitous in business and is a stepping stone to more advanced
+methods of interacting with databases.
+The dialect of SQL called ```sqlite3``` is a compact and versatile 
+set of infrastructure for executing SQL queries and interacting with databases. 
+
+
+## SQL in Python: Getting Started
 
 In this section, we will use Python to interact with databases
+using ```sqlite3```
 and the first step on this journey is to load the Python module ```sqlite3```. 
 
 
