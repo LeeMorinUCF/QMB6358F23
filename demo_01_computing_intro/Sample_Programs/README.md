@@ -40,5 +40,6 @@ Can you find the difference?
 ## Dividing one number into another
 
 
-Try the program ```DIV_12_3.txt```
+Try the program ```DIV_12_34.txt```
 Can you find a problem with this program?
+Hint: If you find the problem, you may need to use the "Reset" button to halt the program.
