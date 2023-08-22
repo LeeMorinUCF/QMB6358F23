@@ -64,6 +64,7 @@ Here are some examples that follow from the discussion of the [RodRego](http://s
 RodRego is a program for running programs in a language called ```RAP```, which stands for *Register Assembly Programming*. 
 A version that will run in your browser is available [here](https://rodrego.it.tufts.edu/).
 The following examples are found in Dan Dennett's book *Intuition Pumps and Other Tools for Thinking*. 
+Copies of the scripts are also stored in the folder ```Sample_Programs``` above.
 
 ### Program 1: ```ADD[1,2]```
 
