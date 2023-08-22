@@ -113,8 +113,19 @@ When you are the only contributor, and the code is not running
 in a production environment, as for your assignments, 
 you might simply push to the main or master branch.
 
+### Tools for Collaboration
 
-### Forking: Making your own copy of the repo
+The power of GitHub is not limited by its functionality for version control. 
+Its most useful feature is that it facilitates collaboration. 
+Contributors to a coding project can make copies of an existing repo in a number of ways:
+forking or branching a repository. 
+Using a fork or a branch of an existing repository allows a contributor
+to make changes to private copy of a project on their local computer. 
+Then, when the modifications have been tested and, if necessary, approved
+by the developer responsible for the code, the modifications can be pushed into the main copy. 
+
+
+#### Forking: Making your own copy of the repo
 
 For extensive edits, or to create a new, separate project built off an existing repository, you may want to [fork an existing repo](https://help.github.com/en/articles/fork-a-repo).
 This creates a new copy of the repository that is a separate repository in its own right, 
@@ -124,13 +135,13 @@ since it cannot be kept private, since the creator of the original repository
 has access to it, to see how downstream users are using the code. 
 As such, you would not use it for your assignments. 
 
-### Synching your fork
+#### Synching your fork
 
 If other software engineers have edited the original repository, you will want to update those changes to the version in your repository. This is called synching your fork. Some links to help with this are found in [Syncing a fork](https://help.github.com/en/articles/syncing-a-fork). 
 Notice, that this advice is stated in terms of the relevant commands through a terminal, instead of a point-and-click interface.
 With this approach, GitHub is a much more versatile tool.
 
-## Working in Parallel in Separate Branches
+#### Working in Parallel in Separate Branches
 
 Instead of creating a forked version of another user's repo, 
 you can modify another version of the repo within the same repo. 
