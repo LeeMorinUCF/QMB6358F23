@@ -60,10 +60,10 @@ These commands are listed in a program in which each line has up to four paramet
 * The third is needed only in the case of the ```INC``` or ```DEB``` commands. After changing the register, it instructs the computer to *go to* a particular *step* in the program and execute the instruction at that step next. 
 * The fourth column is ony needed for the ```DEB``` command. It indicates the *branch-to step* in the program to be executed next in the case that the register has a value of zero and cannot be decreased. 
 
-Here are some examples that follow from the discussion of the [RodRego](http://sites.tufts.edu/rodrego/) program on the website of the philosopher Dan Dennet at Tufts University. 
+Here are some examples that follow from the discussion of the [RodRego](http://sites.tufts.edu/rodrego/) program on the website of the philosopher Dan Dennett at Tufts University. 
 RodRego is a program for running programs in a language called ```RAP```, which stands for *Register Assembly Programming*. 
-A version that will run in your browser is available [here](http://proto.atech.tufts.edu/RodRego/).
-The following examples are found in Dan Dennet's book *Intuition Pumps and Other Tools for Thinking*. 
+A version that will run in your browser is available [here](https://rodrego.it.tufts.edu/).
+The following examples are found in Dan Dennett's book *Intuition Pumps and Other Tools for Thinking*. 
 
 ### Program 1: ```ADD[1,2]```
 
