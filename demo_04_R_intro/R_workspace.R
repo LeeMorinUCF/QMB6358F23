@@ -58,7 +58,7 @@ rm(list=ls(all=TRUE))
 # The '<-' operator denotes right-to-left assignment.
 # wdPath <- '/path/to/your/folder'
 # On my computer, this is:
-wd_path <- '~/Teaching/QMB6358_Fall_2020/GitRepos/QMB6358F20/demo_05_R_intro'
+wd_path <- 'C:/Users/le279259/OneDrive - University of Central Florida/Documents/GitHub/QMB6358F21/demo_04_R_intro/my_folder'
 setwd(wd_path)
 
 
@@ -138,7 +138,7 @@ class(false_statement1)
 pi_plus <- some_numbers.integers + value_of_pi
 
 # Notice anything unusual?
-
+class(pi_plus)
 
 
 # The concatenation function c() is used to form lists of objects.
@@ -151,6 +151,7 @@ important_numbers <- c(value_of_pi, value_of_e)
 
 # Try adding these to the integers.
 important_numbers_plus <- some_numbers.integers + important_numbers
+print(important_numbers_plus)
 # What happened this time?
 
 # Recycling might save the planet, but it might ruin your code.
@@ -350,7 +351,7 @@ exp(c(1,2))
 sum(some_numbers.integers)
 cumsum(some_numbers.integers)
 
-
+mean(some_numbers.integers)
 
 # Special values.
 
@@ -463,9 +464,30 @@ if (weather == 'rainy') {
 
 
 
+
+
+
 # For loop.
 total <- 0
 for(i in 1:10) {
+
+  # Do the computations here.
+  total <- total + i
+
+  # Print a progress report.
+  print('Cumulative total is')
+  print(total)
+  print(sprintf('Completed iteration %d', i))
+}
+
+total
+
+# The iterator can be an arbitrary vector.
+
+# For loop.
+total <- 0
+# i <- 1
+for(i in c(5, 3, 6, 9, 100)) {
 
   # Do the computations here.
   total <- total + i
@@ -567,7 +589,7 @@ the_sum <- addTwoNumbers(3,4)
 
 addThreeNumbers <- function(first_number, second_number) {
 
-  third_number <- 200
+  # third_number <- 200
 
   total <- first_number + second_number + third_number
 

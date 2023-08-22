@@ -35,9 +35,11 @@ rm(list=ls(all=TRUE))
 # Set working directory.
 # The '<-' operator denotes right-to-left assignment.
 # wd_path <- '/path/to/your/folder'
-wd_path <- '~/Teaching/QMB6358_Fall_2020/GitRepos/QMB6358F20/demo_08_data_in_R'
-setwd(wd_path)
+# "~/Teaching/QMB6358_Fall_2021/GitRepo/QMB6358F21/demo_07_data_in_R"
 
+wd_path <- '~/Teaching/QMB6358_Fall_2021/GitRepo/QMB6358F21/demo_07_data_in_R'
+setwd(wd_path)
+getwd()
 
 # Set paths to other folders.
 # data_path <- sprintf('%s/data', wd_path)
@@ -150,12 +152,25 @@ cars_df[sel_rows, ]
 # The empty argument in [,] select all elements.
 
 
+sel_rows <- cars_df$speed == 24
+cars_df[sel_rows, ]
+
+
 # A data frame is essentially a list of objects.
 class(cars_df$dist)
 
 # Exercise:
 # 1. List the 5 fastest cars.
 # 2. List the 4 cars with the shortest stopping distance.
+
+
+
+# Tables
+
+table(cars_df[, 'speed'])
+
+table(cars_df[, 'speed'],
+      cars_df[, 'dist'])
 
 
 
@@ -186,8 +201,8 @@ colnames(iris_df)
 
 # The last column can be designed as a factor.
 class(iris_df$Species)
-# iris_df$Species <- factor(iris_df$Species) # If not a factor already.
-# class(iris_df$Species) # Check that it was changed to a factor.
+iris_df$Species <- factor(iris_df$Species) # If not a factor already.
+class(iris_df$Species) # Check that it was changed to a factor.
 levels(iris_df$Species)
 
 
@@ -245,6 +260,9 @@ iris_df2
 
 # Sort the data by one variable.
 iris_df[order(iris_df$Petal.Length),]
+
+
+iris_df[order(-iris_df$Petal.Length),]
 
 
 # Exercise:

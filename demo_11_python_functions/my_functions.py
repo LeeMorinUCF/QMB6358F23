@@ -50,7 +50,7 @@ def multiply_two(num_1, num_2):
     35
     >>> multiply_two(99, 1)
     99
-    >>> multiply_two(120, 10)
+    >>> multiply_two(10, 10)
     100
     >>> multiply_two(1, 1)
     1
@@ -70,13 +70,13 @@ def is_it_5_or_6(num_in):
     Determines whether the number entered is a 5 or a 6.
     
     >>> is_it_5_or_6(4)
-    "The number is not 5 or 6."
+    'The number is not 5 or 6.'
     >>> is_it_5_or_6(5)
-    "The number is a 5 or a 6."
+    'The number is a 5 or a 6.'
     >>> is_it_5_or_6(6)
-    "The number is a 5 or a 6."
+    'The number is a 5 or a 6.'
     >>> is_it_5_or_6(100)
-    "The number is not 5 or 6."
+    'The number is not 5 or 6.'
     
     """
     if num_in == 5 or num_in == 6:
@@ -108,7 +108,7 @@ def multiples_of_5(n):
     
     list_of_fives = range(0, n+1, 5)
     
-    return list_of_fives[1:]
+    return list(list_of_fives[1:])
 
 
 
@@ -145,9 +145,9 @@ def summarize_5_numbers(num_1, num_2, num_3, num_4, num_5):
     of five numbers entered.
     
     >>> summarize_5_numbers(1, 1, 1, 1, 1)
-    [1, 1, 1]
+    [1, 1, 1.0]
     >>> summarize_5_numbers(1, 2, 3, 4, 5)
-    [5, 1, 3]
+    [5, 1, 3.0]
     """
     list_of_nums = [num_1, num_2, num_3, num_4, num_5]
     max_5 = np.max(list_of_nums)

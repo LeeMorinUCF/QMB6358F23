@@ -113,7 +113,7 @@ within the folder ```data```.
 In the second case, the file ```data2.txt``` is one folder up: 
 the folder containing the current folder. 
 In the third case, to access the file ```data3.txt```, you have to 
-move three folder up and then move into another folder called ```data``, 
+move three folder up and then move into another folder called ```data```, 
 which contains the file ```data3.txt```. 
 
 
