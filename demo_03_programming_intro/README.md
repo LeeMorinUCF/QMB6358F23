@@ -102,7 +102,7 @@ The precise syntax differs by programing language but the most common are shown 
 ### Logical Operators
 
 The logical variables from two relational operators can be combined into another logical variable using logical operators. 
-In ```R```, there are the following possibilities, illustrated by Venn diagrams with the sets in which the logical variable ```x``` and ```y``` are ```TRUE```.
+In ```R```, there are the following possibilities, illustrated by Venn diagrams with the sets in which the logical variables ```x``` and ```y``` are ```TRUE```.
 
 
 <img src="Images/LogicalOpsVenn.png" width="500"/>
@@ -253,7 +253,7 @@ Sometimes it is necessary to execute one command if a contition is ```TRUE```
 and execute other commands when the condition is ```FALSE``` 
 but avoid executing these other commands if the condition is ```TRUE``
 
-<img src="Images/If_else_flow_diagram_C.jpg" width="500"/>
+<img src="Images/if_else_flow_diagram_C.jpg" width="500"/>
 
 In the flow chart above, the program executes the first block of code then skips the second block when ```condition == TRUE```.
 When ```condition``` is ```FALSE```, the interpreter skips the first block of code and runs only the second. 
