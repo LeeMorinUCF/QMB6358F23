@@ -277,7 +277,7 @@ if (weather == "rainy") {
 }
 ```
 
-For more complicated situations, you can also chain a series of nested ```if``` statements. 
+For more complicated situations, you can also chain a series of ```if``` statements. 
 
 ```R
 if (weather == "rainy") {
@@ -288,7 +288,27 @@ if (weather == "rainy") {
     print("Bring both, just in case.")
 }
 ```
-Furthermore, each code block can contain other ```if``` statements or *loops*.
+Furthermore, each code block can contain other ```if``` statements or *loops*. 
+If another level of ```if``` statements appear within the first level, 
+the inner ```if``` statements are referred to as *nested* if statements.
+
+
+```R
+if (weather == "rainy") {
+  if (wind_speed < 10) {
+    print("Bring an unbrella.")
+  } else {
+    print("Wear a raincoat.")
+  }
+
+} else if (weather == "sunny") {
+    print("Bring a hat.")
+} else {
+    print("Bring everything, just in case.")
+}
+```
+
+
 
 
 ### Repetition
