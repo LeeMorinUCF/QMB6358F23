@@ -13,7 +13,7 @@ The nouns of programming languages are the variables or objects that take on par
 Variables are stored in various *types* or *classes*. 
 Data types are often numeric, such as integers or real numbers. 
 Depending on the particular language, these types are sometimes called "float" or "long" or "double", depending on the degree of precision, as in the number of decimal places or significant digits.  
-There are also data types for holding non-numeric data, such as letters of the alphabet, in variables called *strings* or *character* vectors. 
+There are also data types for holding non-numeric data, such as letters of the alphabet, called *strings* or *characters*. 
 
 
 Examples of *classes* of data in ```R``` are as follows: 
@@ -102,7 +102,7 @@ The precise syntax differs by programing language but the most common are shown 
 ### Logical Operators
 
 The logical variables from two relational operators can be combined into another logical variable using logical operators. 
-In ```R```, there are the following possibilities, illustrated by Venn diagrams with the sets in which the logical variables ```x``` and ```y``` are ```TRUE```.
+In ```R```, there are the following possibilities, illustrated by Venn diagrams with the sets in which the logical variables ```y``` and ```x``` are ```TRUE```.
 
 
 <img src="Images/LogicalOpsVenn.png" width="500"/>
@@ -192,7 +192,7 @@ Some built-in methods work with one of the above data types, such as strings or 
 An object can also be a mix of several data types. 
 Typically, an object is designed with a particular application in mind. 
 
-In Python, here are many methods designed for type string, for example:
+In Python, there are many methods designed for type string, for example:
 
 ```python
 my_string = "ThIs_Is_A_sTrInG"
@@ -212,7 +212,7 @@ The programs you write will be more interesting and useful when you specify when
 ### Conditional Logic
 
 Conditional logic is what permits the great flexibility of programming languages for designing algorithms. 
-It detrmines under what conditions an operation is to be performed. 
+It determines the conditions under which an operation is to be performed. 
 The basic conditional statement is the ```if``` statement.
 
 #### ```if``` statements
@@ -251,7 +251,7 @@ if (time == "8:00" & day != "Sunday") {
 
 Sometimes it is necessary to execute one command if a contition is ```TRUE```
 and execute other commands when the condition is ```FALSE``` 
-but avoid executing these other commands if the condition is ```TRUE``
+but avoid executing these other commands if the condition is ```TRUE```
 
 <img src="Images/if_else_flow_diagram_C.jpg" width="500"/>
 
