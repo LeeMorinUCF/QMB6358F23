@@ -39,7 +39,7 @@ Sometimes you want the solution that is most clear.
 
 It is a good practice to clear the workspace before each session. 
 There may be variables left over from the previous session that will interfere with your current project. 
-Furthermore, if you repeatedly run you program from top to bottom while you make edits, you will be sure to produce a script that produces the same results each time. 
+Furthermore, if you repeatedly run your program from top to bottom while you make edits, you will be sure to produce a script that produces the same results each time. 
 
 ```R
 # Clear workspace.
@@ -51,7 +51,9 @@ You can also remove specific variables, which might be useful if they are large 
 
 ### Setting the Working Directory
 
-You should deliberately set the directory in which you will run your scripts. 
+When running commands in an interactive mode, 
+such as with an IDE like RStudio,
+you should deliberately set the directory in which you will run your scripts. 
 This is the default location for any input and output. 
 The ```setwd()``` function takes a string as the path to your directory. 
 Note that the slashes in the path are forward slashes because that character is used for something else. 
@@ -73,6 +75,7 @@ Use the ```ls()``` command to list all variables in the workspace, so that you k
 workspace_file_name <- 'myWorkspace1.RData'
 save.image(workspace_file_name)
 ```
+
 
 ### Loading a Workspace
 
@@ -103,7 +106,8 @@ class(workspace_file_name)
 "character"
 ```
 
-You can combine strings with the sprintf() function handed down from C.
+You can combine strings with the ```sprintf()``` function 
+handed down from C.
 (Many C and FORTRAN programs are used in the background in R.)
 
 ```R
@@ -113,8 +117,9 @@ full_string <- sprintf('Put the %s before the %s.', string1, string2)
 ```
 
 The '%s' is called an 'escape sequence'.
-It tells the sprintf() function to look for the next argument (which should be a string)
-And insert it in the place of the '%s' and outputs the full string.
+It tells the ```sprintf()``` function to look for the next argument 
+(which should be a string)
+and insert it in the place of the '%s' and then outputs the full string.
 ```R
 class(full_string)
 ```
@@ -209,7 +214,11 @@ You can assemble several variables into a list (preserving individual types).
 ```R
 list_of_stuff <- list(thing1 = some_numbers.integers,
                       thing2 = value_of_pi)
+```
 
+Note the difference between the assignment operator ```<-```
+and the equal sign.
+```R
 other_list <- list(item1 = x1 <- 2, item2 = 'string')
 x1
 ```
@@ -585,7 +594,7 @@ if (weather == 'rainy') {
 
 ### ```for``` Loops
 
-The notation for ```for``` loops in ```R``` is similar to that for ```if``` statements.
+The syntax for ```for``` loops in ```R``` is similar to that for ```if``` statements.
 ```R
 total <- 0
 for (i in 1:10) {
@@ -715,6 +724,7 @@ addThreeNumbers <- function(first_number, second_number) {
 
   # print(first_number)
   # print(second_number)
+  # print(third_number)
 
   return(total)
 }
@@ -861,7 +871,7 @@ library(foreign)
 library(haven)
 ```
 
-Some packages have the functionality for handling larger data sets in a way that is efficient in terms of memory uses and computational complexity.
+Some packages have the functionality for handling larger data sets in a way that is efficient in terms of memory use and computational complexity.
 
 ```R
 # install.packages('data.table')

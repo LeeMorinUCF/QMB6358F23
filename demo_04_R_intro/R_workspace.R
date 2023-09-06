@@ -58,7 +58,7 @@ rm(list=ls(all=TRUE))
 # The '<-' operator denotes right-to-left assignment.
 # wdPath <- '/path/to/your/folder'
 # On my computer, this is:
-wd_path <- 'C:/Users/le279259/OneDrive - University of Central Florida/Documents/GitHub/QMB6358F21/demo_04_R_intro/my_folder'
+wd_path <- 'C:/Users/le279259/OneDrive - University of Central Florida/Documents/GitHub/QMB6358F23/demo_04_R_intro/my_folder'
 setwd(wd_path)
 
 
@@ -184,6 +184,8 @@ as.numeric(num_string)
 list_of_stuff <- list(thing1 = some_numbers.integers,
                       thing2 = value_of_pi)
 
+# Note the difference between the assignment operator ```<-```
+# and the equal sign.
 other_list <- list(item1 = x1 <- 2, item2 = 'string')
 x1
 
@@ -589,12 +591,13 @@ the_sum <- addTwoNumbers(3,4)
 
 addThreeNumbers <- function(first_number, second_number) {
 
-  # third_number <- 200
+  third_number <- 200
 
   total <- first_number + second_number + third_number
 
   # print(first_number)
   # print(second_number)
+  # print(third_number)
 
   return(total)
 }
