@@ -706,11 +706,12 @@ It only works when the computing job can be split into independent
 calculations or, at least, calculations with that share a minimal set of information. 
 For recursive calculations, you would have to find another approach, 
 unless it turns out that you can efficiently split up the calculations
-within each iteration within a recursion. 
-The benefit, at best, is reducing the calculation by the number of nodes.
+within each iteration within a recursion, 
+which still may offer only a minor improvement. 
+The benefit, at best, is reducing the calculation by a factor of the number of nodes.
 Often, this ideal is not achieved, since there is some overhead in
-setting up the nodes for the calculation, and passing parameters to
-each node then returning the output back to the master node. 
+setting up the nodes for the calculation, passing parameters to
+each node, and then returning the output back to the master node. 
 Although you can sometimes predict the reduction in computing time 
 with pencil and paper, it is often better to discover this empirically by
 increasing the scope of your calculation in steps and timing the calculation.
@@ -722,8 +723,8 @@ There exist many packages and procedures to achieve this but the
 ```foreach``` package in R is a quick way to get started with parallel computation.
 
 As usual, you will have to install and declare the 
-```doParallel``` and the 
-```foreach``` package to get started.
+```doParallel``` and 
+```foreach``` packages to get started.
 
 
 ```
@@ -734,17 +735,18 @@ Then you will have to initialize the processors, including selecting the number 
 One approach is to find out how many cores are available:
 
 ```
-cores=detectCores()
-cl <- makeCluster(cores[1]-1)
+cores <- detectCores()
+cl <- makeCluster(cores[1] - 1)
 ```
 The above command leaves only one core idle, which allows for other 
 processes to run. 
 You might use this on your own laptop, for example. 
-If using a shard computing system, you may want to leave room for your 
+If using a shared computing system, you may want to leave room for your 
 colleagues to do their work and choose a number of nodes such that others
 are still available. 
 On ```mseconomics.business.ucf.edu```, there are 48 CPUs, 
-so you might select 40 CPUs, leaving 8 for other users, as follows.
+so you might select 40 CPUs, leaving 8 for other users and background processes, 
+as follows.
 
 ```
 cl <- makeCluster(40)
@@ -757,13 +759,13 @@ registerDoParallel(cl)
 
 Now the system is ready for the main calculation, which is 
 performed by the namesake function in the ```foreach``` package.
-In this case, some function ```function_that_does_my_omething_calculation()```
+In this example, some function ```function_that_does_my_calculation()```
 performs the entire calculation in the loop. 
 
 ```
 my_final_matrix <- foreach(i = 1:100000, .combine = cbind) %dopar% {
    
-   my_temp_matrix <- function_that_does_my_omething_calculation()
+   my_temp_matrix <- function_that_does_my_calculation()
    
 
    my_temp_matrix 
@@ -784,7 +786,7 @@ from the last statement in the loop (```my_temp_matrix```)
 and appending it to the accumulated output (```my_final_matrix```)
 as would be done by 
 ```
-my_final_matrix = cbind(my_final_matrix, my_temp_matrix)
+my_final_matrix <- cbind(my_final_matrix, my_temp_matrix)
 ```
 in a serial ```for``` loop. 
 Other options for combining the output are available
@@ -860,12 +862,12 @@ summary(my_estimates)
 ```
 
 You can explore this example by choosing different values for the 
-number of nodes, the number of replication and the number
+number of nodes, the number of replications and the number
 of observations in each replication.
 
 
 For more information on how to use this package, please see the package vignette at 
 [Getting Started with ```doParallel``` and ```foreach```](https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf).
 As with any other calculation, there exist many more way to do this but
-the pair of the ``` ```
+the pair of the ```doParallel``` and the
 ```foreach``` package is an easy way to get started.
