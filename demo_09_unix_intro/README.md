@@ -868,6 +868,6 @@ of observations in each replication.
 
 For more information on how to use this package, please see the package vignette at 
 [Getting Started with ```doParallel``` and ```foreach```](https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf).
-As with any other calculation, there exist many more way to do this but
+As with any other calculation, there exist many more ways to do this but
 the pair of the ```doParallel``` and the
 ```foreach``` package is an easy way to get started.
