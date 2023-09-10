@@ -686,4 +686,186 @@ After you enter them, you will see a command prompt in your home directory.
 Now you can do all of this on someone else's computer (provided you have access).
 
 
+## Running Computing Jobs in Parallel
 
+One of the main benefits of remote computing 
+is that you can take of advantage of computing systems 
+with much more computing power than your laptop. 
+When the remote computer has multiple CPUs, or even multiple cores
+on multiple CPUs, you can split up your computing job into
+different parts to run each job *in parallel*.
+Compare this to running a single script on a single CPU, 
+which would be running the script in *series*. 
+
+For some jobs with much repetition, this approach can offer
+a substantial savings in time. 
+It works best when a computing job is easily separated into small chunks
+returning a small output that can be combined into a larger calculation. 
+For example, when running a simulation, you can run each realization on a different node. 
+It only works when the computing job can be split into independent 
+calculations or, at least, calculations with that share a minimal set of information. 
+For recursive calculations, you would have to find another approach, 
+unless it turns out that you can efficiently split up the calculations
+within each iteration within a recursion. 
+The benefit, at best, is reducing the calculation by the number of nodes.
+Often, this ideal is not achieved, since there is some overhead in
+setting up the nodes for the calculation, and passing parameters to
+each node then returning the output back to the master node. 
+Although you can sometimes predict the reduction in computing time 
+with pencil and paper, it is often better to discover this empirically by
+increasing the scope of your calculation in steps and timing the calculation.
+
+With this motivation out of the way, I will explain how to perform
+calculations in parallel using a simple procedure in R. 
+There exist many packages and procedures to achieve this but the 
+```doParallel``` package, combined with the
+```foreach``` package in R is a quick way to get started with parallel computation.
+
+As usual, you will have to install and declare the 
+```doParallel``` and the 
+```foreach``` package to get started.
+
+
+```
+library(doParallel)
+library(foreach)
+```
+Then you will have to initialize the processors, including selecting the number of cores. 
+One approach is to find out how many cores are available:
+
+```
+cores=detectCores()
+cl <- makeCluster(cores[1]-1)
+```
+The above command leaves only one core idle, which allows for other 
+processes to run. 
+You might use this on your own laptop, for example. 
+If using a shard computing system, you may want to leave room for your 
+colleagues to do their work and choose a number of nodes such that others
+are still available. 
+On ```mseconomics.business.ucf.edu```, there are 48 CPUs, 
+so you might select 40 CPUs, leaving 8 for other users, as follows.
+
+```
+cl <- makeCluster(40)
+```
+
+In any case, register  the cores to initialize the computing job.
+```
+registerDoParallel(cl)
+```
+
+Now the system is ready for the main calculation, which is 
+performed by the namesake function in the ```foreach``` package.
+In this case, some function ```function_that_does_my_omething_calculation()```
+performs the entire calculation in the loop. 
+
+```
+my_final_matrix <- foreach(i = 1:100000, .combine = cbind) %dopar% {
+   
+   my_temp_matrix <- function_that_does_my_omething_calculation()
+   
+
+   my_temp_matrix 
+}
+```
+
+The syntax is similar to a ```for``` loop in R, except that 
+it is denoted as a ```foreach``` loop. 
+and the expression ```%dopar%``` appears befor the body of the loop
+to specify that the loop will be run in parallel, 
+using the ```doParallel``` package.  
+Along with the argument for the iterators ```i = 1:100000``` 
+is an additional argument to specify how to combine the outputs 
+of the calculations from each node.
+By setting ```.combine = cbind```, the loop 
+accumulates the output by taking the value 
+from the last statement in the loop (```my_temp_matrix```) 
+and appending it to the accumulated output (```my_final_matrix```)
+as would be done by 
+```
+my_final_matrix = cbind(my_final_matrix, my_temp_matrix)
+```
+in a serial ```for``` loop. 
+Other options for combining the output are available
+and are documented in the package documentation. 
+
+When your computing job is completed, be sure to 
+stop the cluster to return those resources to make them available to other users. 
+
+```
+stopCluster(cl)
+```
+
+Note that each CPU will need whatever packages or libraries
+are necessary to perform their calculations;
+they are separate computers, after all. 
+To attach packages on each node, you could include the command 
+```library(my_package)``` in the body of the for loop
+but the ```foreach``` function allows you to pass 
+the names of packages through the ```.packages``` argument:
+```
+foreach(i = 1:100000, 
+        .combine = cbind, 
+        .packages = c("dplyr", "tidyr")) %dopar% {
+        
+        my_calculation()
+}
+```
+
+
+As for parameters in memory, however, the ```foreach``` package 
+takes care to pass any parameters in the workspace to the nodes. 
+In the early days, this communication had to be made explicitly by broadcasting values. 
+
+
+
+Putting it all together, you can combine realizations from a simulation.
+In this case, the ouput is combined into a matrix by stacking the 
+row of estimates on top of each other using the ```.combine = rbind```
+argument, which combines output as would be done with the ```rbind()``` function.
+
+```
+library(doParallel)
+library(foreach)
+num_nodes <- 2
+cl <- makeCluster(num_nodes)
+registerDoParallel(cl)
+
+num_obs <- 1000
+num_reps <- 100000
+
+beta_0 <- 0
+beta_1 <- 1
+beta_2 <- 0.5
+
+my_estimates <- foreach(i = 1:num_reps, .combine = rbind) %dopar% {
+   
+   my_data <- data.frame(matrix(rnorm(3*num_obs), nrow = num_obs))
+   colnames(my_data) <- c('x1', 'x2', 'epsilon')
+   
+   my_data[, 'y'] <- beta_0 + beta_1*my_data[, 'x1'] + 
+                      beta_2*my_data[, 'x2'] + my_data[, 'epsilon']
+
+   lm_model <- lm(data = my_data, formula = y ~ x1 + x2)
+   
+   lm_estimates <- coef(lm_model)
+
+   lm_estimates 
+}
+
+stopCluster(cl)
+
+summary(my_estimates)
+```
+
+You can explore this example by choosing different values for the 
+number of nodes, the number of replication and the number
+of observations in each replication.
+
+
+For more information on how to use this package, please see the package vignette at 
+[Getting Started with ```doParallel``` and ```foreach```](https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf).
+As with any other calculation, there exist many more way to do this but
+the pair of the ``` ```
+```foreach``` package is an easy way to get started.
