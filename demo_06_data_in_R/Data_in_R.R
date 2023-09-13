@@ -7,7 +7,7 @@
 # Lealand Morin, Ph.D.
 # Assistant Professor
 # Department of Economics
-# College of Business Administration
+# College of Business
 # University of Central Florida
 #
 # September 9, 2020
@@ -199,7 +199,7 @@ head(iris_df)
 # Show the column names of the data.
 colnames(iris_df)
 
-# The last column can be designed as a factor.
+# The first column can be designed as a factor.
 class(iris_df$Species)
 iris_df$Species <- factor(iris_df$Species) # If not a factor already.
 class(iris_df$Species) # Check that it was changed to a factor.

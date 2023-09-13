@@ -77,7 +77,7 @@ summary(cars_df)
  Max.   :25.0   Max.   :120.00  
 ```
 
-Determine the dimensions of a dataset as a vector or one dimension at a time. 
+Determine the dimensions of a dataset either as a vector or one dimension at a time. 
 
 ```
 dim(cars_df)
@@ -99,7 +99,7 @@ head(cars_df)
 5     8   16
 6     9   10
 ```
-Just as with UNIX, the ```tails``` funtion works similarly. 
+Just as with UNIX, which we will discuss later, the ```tail``` funtion works similarly. 
 
 
 Show the column names of the data.
@@ -242,7 +242,7 @@ colnames(iris_df)
 [1] "Species"      "Petal.Length" "Petal.Width"  "Sepal.Length" "Sepal.Width" 
 ```
 
-The last column is a factor.
+The first column is a factor.
 ```
 class(iris_df$Species)
 [1] "factor"
