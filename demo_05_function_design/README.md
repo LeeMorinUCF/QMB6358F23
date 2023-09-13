@@ -3,12 +3,12 @@
 In this demo, we will study the process of designing functions. 
 We will follow the 5-step process in our textbook *Practical Programming*, 
 Chapter 3, called the **Function Design Recipe**. 
-It is called a recipe because it guides you to follow a systematic approach to designing your function. 
+It is called a recipe because it guides you to follow a systematic approach to designing your functions. 
 Every time you write a function, you need to answer the following questions:
 
 * What do you name the function? 
-* What are the argumants, and what types of information do they represent?
-* What calculations are you doing with that information?
+* What are the arguments, and what types of information do they represent?
+* What calculations are you performing with that information?
 * What does the function return?
 * Does it work as expected?
 
@@ -18,14 +18,14 @@ You will address these questions by following the recipe shown next.
 
 The five steps are as follows:
 
-1. **Examples** Type a few example calls and determine what it should return for those values. 
+1. **Examples:** Type a few example calls and determine what it should return for those values. 
 The name of your function should indicate what is being calculated in your examples. 
-1. **Description** Write a few sentences to describe what your function does. 
-1. **Header** Type some documentation relating to your function. 
-It should be clear to the reader what arguments it takes as input and what value is returned and the types of each variable. 
-1. **Body** By now, you should be clear about how your function will work. 
+1. **Description:** Write a few sentences to describe what your function does. 
+1. **Header:** Type some documentation relating to your function. 
+It should be clear to the reader what arguments it takes as input, what value is returned and the types of each variable. 
+1. **Body:** By now, you should be clear about how your function will work. 
 Now type the code to perform the calculations. 
-1. **Test** Run the examples from step 1 to verify that your function works as expected. 
+1. **Test:** Run the examples from Step 1 to verify that your function works as expected. 
 
 
 ## Function Design Example
@@ -206,7 +206,7 @@ addTwoNumbers <- function(first_number, second_number) {
 It seems like a lot of work to do to prepare to write one line of code.
 With more elaborate functions, having clearly stated the 
 examples, header and description, 
-you should be clear about what it is you will compute and the planning will pay off. 
+you should be clear about what it is you will compute and that planning will pay off. 
 
 
 
@@ -233,7 +233,7 @@ addTwoNumbers(-3,3) == 0
 [1] TRUE
 ```
 
-If all goes well, these examples should all return true.
+If all goes well, these tests of the examples should all return ```TRUE```.
 
 
 ## Tips
