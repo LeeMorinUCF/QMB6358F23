@@ -219,7 +219,7 @@ lines(income_grid, reg_line_not_cali,
       lwd = 3, col = 'black')
 
 # Exercise:
-# Repeat for california without earthquakes (green)
+# Repeat for California without earthquakes (green)
 # and earthquakes (red).
 
 

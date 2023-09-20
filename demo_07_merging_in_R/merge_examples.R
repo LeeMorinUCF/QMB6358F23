@@ -42,7 +42,6 @@ setwd(wd_path)
 # Read the tables.
 Employees <- read.csv('Employees.csv')
 Departments <- read.csv('Departments.csv')
-# Departments <- read.csv('Departments_copy.csv')
 
 
 
