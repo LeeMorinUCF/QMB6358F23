@@ -4,19 +4,20 @@ In previous examples, we had joined tables by simply stacking them together,
 with the rows and columns in the order they appear, 
 using either the ```rbind()``` or the ```cbind()```
 functions in R, 
-which correcpond to the ```cat``` and ```paste``` commands in UNIX. 
+as we will see next week,
+which correspond to the ```cat``` and ```paste``` commands in UNIX. 
 When the data are not in order, or observations in the the rows do not match, 
 you can *join* datasets so that the 
 corresponding observations are linked together in order.
 In order to achieve this, there must be a *key* with which to join the data.
 That is, a variable that identifies the corresponding observations in
-each entry the databases.
+each entry of the databases.
 With this key, the ```merge()``` function in R can
 properly organize the joined datasets with matching rows. 
 
 
 
-There are four common types of joins, with the difference 
+There exist four common types of joins, with the difference 
 depending on what is done with the unmatched entries.  
 
 In SQL, tables can be joined with four basic types of joins:
