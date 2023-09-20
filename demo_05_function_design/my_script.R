@@ -34,7 +34,7 @@
 # install.packages("package_name_goes_here")
 
 # Set working directory, if calling from another location.
-# wd_path <- '~/Teaching/QMB6358_Fall_2020/GitRepos/QMB6358F20/demo_06_function_design'
+# wd_path <- 'C:/Users/le279259/OneDrive - University of Central Florida/Documents/GitHub/QMB6358F23/demo_05_function_design'
 # setwd(wd_path)
 
 
