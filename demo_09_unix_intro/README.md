@@ -5,7 +5,7 @@ It is typically accessed through a terminal window: a text-based interface.
 Without the computational expense of showing images of a desktop and tracking mouse movements, using UNIX at the terminal allows the computer (and the user!) to focus attention on the computing problem at hand. 
 
 A software training organization called [Software Carpentry](https://github.com/swcarpentry) maintains a GitHub repository that offers a comprehensive introduction to UNIX at
-[Software Carpentry : Shell Novice](https://github.com/swcarpentry/shell-novice/tree/main/_episodes). 
+[Software Carpentry : Shell Novice](https://github.com/swcarpentry/shell-novice/tree/main/episodes). 
 You should work through those readings and examples as practice with UNIX, 
 in addition to the material in Chapter 2 of the course textbook by [Paarsch and Golyaev](https://mitpress.mit.edu/books/gentle-introduction-effective-computing-quantitative-research).
 This computing material seems daunting to many novice programmers but it is essential to solve computing problems on an industrial scale. 
