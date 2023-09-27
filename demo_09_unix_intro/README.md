@@ -5,7 +5,7 @@ It is typically accessed through a terminal window: a text-based interface.
 Without the computational expense of showing images of a desktop and tracking mouse movements, using UNIX at the terminal allows the computer (and the user!) to focus attention on the computing problem at hand. 
 
 A software training organization called [Software Carpentry](https://github.com/swcarpentry) maintains a GitHub repository that offers a comprehensive introduction to UNIX at
-[Software Carpentry : Shell Novice](https://github.com/swcarpentry/shell-novice/tree/gh-pages/_episodes). 
+[Software Carpentry : Shell Novice](https://github.com/swcarpentry/shell-novice/tree/main/_episodes). 
 You should work through those readings and examples as practice with UNIX, 
 in addition to the material in Chapter 2 of the course textbook by [Paarsch and Golyaev](https://mitpress.mit.edu/books/gentle-introduction-effective-computing-quantitative-research).
 This computing material seems daunting to many novice programmers but it is essential to solve computing problems on an industrial scale. 
@@ -189,7 +189,7 @@ rm path/to/file/file_to_remove.txt
 ```
 
 CAUTION: In UNIX, again, there is no "Undo" command. You have to know what you are doing. 
-(However, if you are in a local copy of a git repository, you can revert to your last commit---see [demo_03_version_control](https://github.com/LeeMorinUCF/QMB6358F21/tree/main/demo_03_version_control).
+(However, if you are in a local copy of a git repository, you can revert to your last commit---see [demo_02_version_control](https://github.com/LeeMorinUCF/QMB6358F23/tree/main/demo_02_version_control).
 This is one of the many reasons to use version control software.
 
 
@@ -201,7 +201,7 @@ The command ```echo``` will print a sring to screen.
 echo "Hello, world!"
 ```
 
-Combine this with the ```>``` operator directs the output to a file.
+Combining this with the ```>``` operator directs the output to a file.
 
 ```
 echo "Hello, world!" > my_new_file.txt
@@ -352,14 +352,15 @@ and to produce output for all entries in both files
 We then ask for the join field along with the second column of both files to be outputted (```-o0,1.2,2.2```) and say that any missing field should be replaced by the string ```" -"``` (space-dash, with ```-e ' -'```).
 
 If the input is not sorted, it has to be pre-sorted. 
-In shells that understands process substitution with ```<( ... )```, this my be done through
+In shells that understand process substitution with ```<( ... )```, this my be done through
 
 ```
 join -t, -a 1 -a 2 -o0,1.2,2.2 -e ' -' <( sort file1.txt ) <( sort file2.txt )
 ```
 See below for more information about the sort command. 
 
-To give full credit where it is due, this example is base on a response to a question on the website <unix.stackexchange.com>:
+To give full credit where it is due, this example is base on a response to a question on the website 
+[unix.stackexchange.com](unix.stackexchange.com):
 
 [join-two-files-based-on-a-column](https://unix.stackexchange.com/questions/395961/join-two-files-based-on-a-column)
 
