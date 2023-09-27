@@ -1,0 +1,5 @@
+a	1	2	NA	NA	a
+b	5	NA	NA	NA	NA
+c	2	NA	NA	NA	NA
+f	7	9	NA	NA	f
+g	NA	3	NA	NA	g
