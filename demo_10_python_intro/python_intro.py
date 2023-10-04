@@ -5,7 +5,7 @@
 # 
 # QMB 6358: Software Tools for Business Analytics
 # 
-# Introductory examples in Python
+# Introductory Examples in Python
 # 
 # Lealand Morin, Ph.D.
 # Assistant Professor
@@ -30,8 +30,8 @@
 
 ## Comments
 
-# In python, there are two ways to write comments: the 
-# symbol or triple quotes:
+# In python, there are two ways to write comments: 
+# the "#" symbol or triple quotes:
 
 
 
@@ -45,6 +45,13 @@ Be a good citizen and inform your users.
 # The first is often used for larger blocks of comments, 
 # such as a description of your script. 
 
+# Naming conventions:
+# You can choose between two main naming conventions
+# for the variables and functions in your code.
+# this_is_snake_case
+# ThisIsCamelCase
+# Python is typically written in snake case.
+
 
 #--------------------------------------------------
 ## Data types and operators
@@ -56,7 +63,7 @@ Be a good citizen and inform your users.
 2+2
 
 
-# Some notable differences from R is the assignment operator = and the exponent symbol (**):
+# Some notable differences from R is the assignment operator "=" and the exponent symbol (**):
 
 
 x = 2
@@ -111,8 +118,12 @@ x[0]
 x[-3]
 x[-1]
 
+x[-10]
+x[10]
 
-# Note that strings are immutable: they are defined as a fixed value and individual elements cannot be altered. 
+
+# Note that strings are immutable: they are defined as a fixed value
+# and individual elements cannot be altered. 
 
 x[2] = 'x'
 
@@ -121,7 +132,8 @@ x[2] = 'x'
 x = x[0:2] + 'x' + x[3:7]
 print(x)
 
-# This was done by taking the two substrings on each side of element two and forming a new string by concatenating them with a one-letter string in the middle. 
+# This was done by taking the two substrings on each side of element two 
+# and forming a new string by concatenating them with a one-letter string in the middle. 
 
 # Be careful with the index numbers. You have to keep track of the number of elements. 
 
@@ -196,6 +208,8 @@ type(z2)
 a = [[1, 2, 3], [4, 5, 6]]
 # a = [[1, 2, 3], [4, 5, 'a']]
 
+type(a)
+
 # For some arrays, used later, the second command throws an error.
 # This is because some kinds of arrays only accepts elements of the same type. 
 # This also offers a computational advantage. 
@@ -216,6 +230,14 @@ print(a[1][2])
 a[1][2] = float('nan')
 
 
+# This uses the float function to convert to a float.
+float(2)
+
+int(2.00000)
+str(2.0)
+
+
+
 #--------------------------------------------------
 ### Determining whether specific elements in a list.
 #--------------------------------------------------
@@ -229,11 +251,12 @@ a[1][2] = float('nan')
 10 in [10, 3, 5]
 
 6 in a
+5 in a
 
 
 [1,2,3] in a
 
-6 in a[1]
+3 in a[0]
 
 
 
@@ -296,13 +319,23 @@ for w in words:
 
 for w in 'words':
     print(w)
+    
+
+# You can call your iterator whatever you want.
+words = ['cat', 'window', 'defenestrate']
+for whatever in words:
+    print(whatever, len(whatever))
+    for l in whatever:
+        print(l)
+
+
 
 
 # While loops work just as they do in other languages. 
 
 i = 5
 while i > 0:
-  i -= 1
+  i -= 1 # same as i = i - 1
   print('i = %d' % i)
   print("Inside the loop")
 
@@ -345,9 +378,10 @@ math.e**math.log(7)
 
 
 must_be_true = math.e**math.log(7) == 7
+must_be_true
 
 must_be_true = (math.e**math.log(7) - 7) < 0.0000001
-
+must_be_true
 
 # When you import a module, you can use any object in the module by using the module name and dot before the object (usually a function or a constant).
 
@@ -426,7 +460,7 @@ def FeetToMetres(feet):
     centi = 2.54
     inches = 12
     return feet*inches*centi/100
-    print "Calculation complete"
+    print("Calculation complete")
 
 # Indenting usually indicates when the function block is over but, just like with R, the return statement ends the execution of the function. 
 
@@ -453,7 +487,8 @@ def FeetToMetres(feet):
 print("x")
 
 
-# Consider this example. What if I make a mistake in spelling a variable?
+# Consider this example. 
+# What if I make a mistake in spelling a variable?
 
 def FeetToMetres2(feet):
     centi = 2.54
@@ -515,7 +550,7 @@ def OddOrEven_2(number):
         else:
             print('odd')
     else:
-        print('Input number not an int')
+        print('Error: Input number not an int')
 
 
 # Test it to see that the function works.
