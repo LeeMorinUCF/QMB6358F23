@@ -50,7 +50,8 @@ Be a good citizen and inform your users.
 # for the variables and functions in your code.
 # this_is_snake_case
 # ThisIsCamelCase
-# Python is typically written in snake case.
+# Python is typically written in snake case
+# but it makes your code clear if you are consistent.
 
 
 #--------------------------------------------------
@@ -213,9 +214,11 @@ type(a)
 # For some arrays, used later, the second command throws an error.
 # This is because some kinds of arrays only accepts elements of the same type. 
 # This also offers a computational advantage. 
-# For now, the above are acceptable because a is technically a list, which, unlike strings, are mutable. 
+# For now, the above are acceptable because a is technically a list, 
+# which, unlike strings, are mutable. 
 
-# Once an array is in memory, you can extract subsets of the data by using the 2-dimensional notation. 
+# Once an array is in memory, you can extract subsets of the data 
+# by using the 2-dimensional notation. 
 
 print(a)
 
@@ -277,15 +280,16 @@ str(2.0)
 age = 17
 
 if age > 17:
-   print("can see a rated R movie")
+   print("can see a movie rated R")
 elif age <= 17 and age > 12:
-   print("can see a rated PG-13 movie")
+   print("can see a movie rated PG-13")
 else:
-   print("can only see rated PG movies")
+   print("can only see movies rated PG")
 
 
 # Colons : denote the end of if or elif or else statements. 
-# The code in the blocks is denoted by the indeting of the lines of code within the block (not the commands like if or else).
+# The code in the blocks is denoted by the indeting of the lines of code 
+# within the block (not the commands like if or else).
 
 # As before, the else statement is optional. 
 
@@ -293,9 +297,9 @@ else:
 age = 1
 
 if age > 17:
-    print("can see a rated R movie")
+    print("can see a movie rated R")
 elif age <= 17 and age > 12:
-    print("can see a rated PG-13 movie")
+    print("can see a movie rated PG-13")
 
 # The default is "else, no action", as with R.
 
@@ -308,7 +312,8 @@ elif age <= 17 and age > 12:
 
 
 # Python is very flexible with looping over objects.
-# As with if statements, use a colon : and indent properly to denote the code block in the for loop. 
+# As with if statements, use a colon : and indent properly to denote
+# the code block in the for loop. 
 
 words = ['cat', 'window', 'defenestrate']
 for w in words:
@@ -322,6 +327,7 @@ for w in 'words':
     
 
 # You can call your iterator whatever you want.
+
 words = ['cat', 'window', 'defenestrate']
 for whatever in words:
     print(whatever, len(whatever))
@@ -383,7 +389,9 @@ must_be_true
 must_be_true = (math.e**math.log(7) - 7) < 0.0000001
 must_be_true
 
-# When you import a module, you can use any object in the module by using the module name and dot before the object (usually a function or a constant).
+# When you import a module, you can use any object in the module 
+# by using the module name and dot before the object 
+# (usually a function or a constant).
 
 
 # You can choose your own abbreviations for modules
@@ -462,7 +470,8 @@ def FeetToMetres(feet):
     return feet*inches*centi/100
     print("Calculation complete")
 
-# Indenting usually indicates when the function block is over but, just like with R, the return statement ends the execution of the function. 
+# Indenting usually indicates when the function block is over but, 
+# just like with R, the return statement ends the execution of the function. 
 
 FeetToMetres(9.5)
 
@@ -557,6 +566,9 @@ def OddOrEven_2(number):
 
 OddOrEven_2(math.pi)
 
+
+# It is now robust to other user errors.
+
 OddOrEven_2('math.pi')
 
 
@@ -581,7 +593,7 @@ def factorial(n):
 # Now test it.
 
 print(factorial(5))
-
+# Note that the program terminates at the return statement.
 
 print(factorial(math.pi))
 
@@ -595,6 +607,8 @@ def factorial_2(n):
         product = product*i
         i = i + 1
     return product
+# Be careful to avoid placing the return statement within the while loop.
+# This would terminate the function on the first iteration.
 
 # Now test this version. Get creative with test cases.
 
@@ -638,7 +652,8 @@ print(factorial_3(1000))
 ### Example: Fibonacci sequence.
 #--------------------------------------------------
 
-# The Fibonacci sequence is made by taking the sum of the last two elements to make the next element in the sequence. The first two elements are the number one.
+# The Fibonacci sequence is made by taking the sum of the last two elements 
+# to make the next element in the sequence. The first two elements are the number one.
 
 
 # 1, 1, 2, 3, 5, 8, 13
