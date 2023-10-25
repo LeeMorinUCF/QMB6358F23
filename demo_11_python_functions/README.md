@@ -269,12 +269,12 @@ re-run all of your test cases to make sure they are still correct.
 
 Let's run through the function design recipe with a few examples
 to practice the 5 steps:
-1. **Examples** Type example calls and what you expect it to return.
+1. **Examples**: Type example calls and what you expect it to return.
 Choose appropriate names for your function and it's arguments. 
-1. **Description** Write a short description to describe what your function does. 
-1. **Header** Type some documentation to describe the arguments and return value. 
-1. **Body** Type the code to perform the calculations. 
-1. **Test** Run the examples to verify that your function works as expected. 
+1. **Description**: Write a short description to describe what your function does. 
+1. **Header**: Type some documentation to describe the arguments and return value. 
+1. **Body**: Type the code to perform the calculations. 
+1. **Test**: Run the examples to verify that your function works as expected. 
 
 
 ## Designing Three Birthday-Related Functions
@@ -942,6 +942,7 @@ def convert_to_celsius(fahrenheit):
 ``` 
 
 We can test the function using the examples in the 
+description of the function.
 
 ```python 
 >>> import doctest

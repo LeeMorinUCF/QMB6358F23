@@ -316,6 +316,47 @@ in an application such as "File Explorer" in Windows.
 To participate in this exercise, you should have installed [Git](https://git-scm.com/) and an associated terminal GitBash.
 
 
+Note that, in July 2020, GitHub announced plans to require 
+token-based authentication to access git through automated means, 
+including command-line interfaces, such as the GitBash terminal:
+
+[Token authentication requirements for Git operations](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/#what-you-need-to-do-today)
+
+What I didn't realize was that this change took effect several years ago. It did not bother me because I have been following this
+procedure all along. 
+It was once an option to enter your GitHub
+credentials into the terminal window every time you 
+interact with GitHub through the command line. 
+To avoid this repetitive task, you could create tokens 
+for authentication, so that your credentials are passed automatically, 
+when accessing git through a trusted device on which you store your token. 
+Essentially, a token is a very long, automatically-generated password
+that you store on your computer. 
+This was always a good idea, not only for increased security, 
+but also for convenience, so one might say that
+GitHub is now making this sensible requirement mandatory. 
+
+The article linked above contains some helpful links to 
+help you create tokens and enter them instead of your password, 
+so that you no longer have to enter your credentials at
+the command line when you are pushing your work to a repo.
+Please see the following pages:
+
+[Managing Your Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+
+
+[Caching Your Github Credentials in git](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git)
+
+A similar process for Mac users:
+
+[Updating Credentials from the MacOS Keychain](https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain)
+
+[This post on stackoverflow.com](https://stackoverflow.com/questions/68781928/support-for-password-authentication-was-removed-on-august-13-2021)
+
+Now that we have that out of the way, 
+let's move on to using git through the terminal window. 
+
+
 ### Using GitHub for Version Control
 
 If your code is not yet associated with a repository, then your code base is untracked. To track your software, either initialize a new repo or clone an existing repo and add your code to it. We will follow the second approach today, as you will use it to download the code base for the course and modify it as you need. As for initializing your own repo, we will progress to that stage as you begin to work on your own coding projects.

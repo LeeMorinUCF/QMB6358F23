@@ -115,10 +115,10 @@ with open('my_new_csv_file.csv', 'w') as csvfile:
 # Read content from an existing csv file.
 # Use a loop along the rows of the file.
 with open('my_new_csv_file.csv', 'r') as csvfile:
-     my_reader_object = csv.reader(csvfile, delimiter=' ', quotechar='|')
+     my_reader_object = csv.reader(csvfile, delimiter=',', quotechar='|')
      for row in my_reader_object:
          print(row)
-         print(', '.join(row))
+         print(' * '.join(row))
 
 
 
@@ -434,6 +434,37 @@ with open('hopedale.txt', 'r') as hopedale_file:
 # Notice the numbers are aligned
 # because we stripped the whitespace only on the right side, 
 # using the rstrip() function. 
+
+
+
+# Collect the counts into a list.
+pelts = []
+better_pelts = []
+with open('hopedale.txt', 'r') as hopedale_file:
+
+    # Read and skip the description line.
+    hopedale_file.readline()
+
+    # Keep reading and skipping comment lines until we read the first piece
+    # of data.
+    data = hopedale_file.readline().rstrip()
+    while data.startswith('#'):
+        data = hopedale_file.readline().rstrip()
+
+    # Now we have the first piece of data.
+    print(data)
+    pelts = pelts + [int(data.strip())]
+    better_pelts.append(int(data.strip()))
+
+    # Read the rest of the data.
+    for data in hopedale_file:
+        print(data.rstrip())
+        pelts = pelts + [int(data.strip())]
+        better_pelts.append(int(data.strip()))
+
+pelts 
+
+better_pelts
 
 
 ##################################################

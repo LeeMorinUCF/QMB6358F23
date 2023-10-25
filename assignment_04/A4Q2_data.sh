@@ -86,20 +86,6 @@ echo "Completed command for Question 2b)."
 
 
 ################################################################################
-# Testing Assignment 3, Question 1: Assemble the data in R
-################################################################################
-
-# Run the R script and save the output
-echo "Running R script for Assignment 3, Question 2..."
-
-
-Rscript ../assignment_03/A3Q2_data.R > A3Q2_results.out
-
-
-echo "Completed R script for Assignment 3, Question 2."
-
-
-################################################################################
 # Testing Assignment 4, Question 2: Assemble the data in UNIX. Test it in R
 ################################################################################
 
@@ -109,11 +95,17 @@ echo "Running R script for Assignment 4, Question 2..."
 
 # Call your A4Q2_tests.R script here.
 # This script contains the block for the Full Model, along with a
-# command to read in the full dataset created above.
+# command to read each of the full datasets created above.
 
+# It should read in A4Q2a_full.csv and print the tests
+# at the bottom of the script for A3Q2_data.R
+
+# Next, it should read in A4Q2b_full.csv and print the tests
+# at the bottom of the script for A3Q2_data.R
 
 
 # Code goes here.
+
 
 
 

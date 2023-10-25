@@ -89,17 +89,6 @@ echo "Completed command for Question 1b)."
 
 
 
-
-################################################################################
-# Testing Assignment 3, Question 1: Assemble the data in R
-################################################################################
-
-# Run the R script and save the output
-echo "Running R script from Assignment 3, Question 1..."
-Rscript ../assignment_03/A3Q1_data.R > A3Q1_results.out
-echo "Completed R script for Assignment 3, Question 1."
-
-
 ################################################################################
 # Testing Assignment 4, Question 1: After assembling the data in UNIX. Test it in R
 ################################################################################
@@ -107,9 +96,17 @@ echo "Completed R script for Assignment 3, Question 1."
 # Run the R script and save the output
 echo "Running R script for Assignment 4, Question 1..."
 
-# Call your A4Q1_tests.R script here.
-echo  "No tests yet."
-# Call to Rscript goes here, as above.
+# Call your A4Q1a_tests.R script in the line below.
+
+# It should read in A4Q1a_full.csv and print the tests
+# at the bottom of the script for A3Q1_data.R
+
+# Next, it should read in A4Q1b_full.csv and print the tests
+# at the bottom of the script for A3Q1_data.R
+
+
+# Code goes here.
+
 
 echo "Completed R script for Assignment 4, Question 1."
 
