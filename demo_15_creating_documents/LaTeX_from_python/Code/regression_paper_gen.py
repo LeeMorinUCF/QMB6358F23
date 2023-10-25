@@ -42,10 +42,15 @@ import matplotlib.pyplot as plt
 # Find out the current directory.
 os.getcwd()
 # Change to a new directory.
+
 # Directory on my (physical) machine. 
 # os.chdir('C:\\Users\\le279259\\Documents\\Teaching\\QMB6358_Fall_2020\\GitRepos\\QMB6358F20\\demo_14_creating_documents\\LaTeX_from_python')
+
 # Directory on my virtual machine. 
-os.chdir("/home/pgbook/Documents/QMB6358F21/demo_14_creating_documents/LaTeX_from_python")
+os.chdir("/home/pgbook/Documents/QMB6358F23/demo_15_creating_documents/LaTeX_from_python")
+# If you use the virtual machine, with QMB6358F23
+# cloned to Documents, then this will be the correct path.
+
 # Check that the change was successful.
 os.getcwd()
 
@@ -152,7 +157,9 @@ open_file.close()
 # Directory on my (physical) machine. 
 # os.chdir('C:\\Users\\le279259\\Documents\\Teaching\\QMB6358_Fall_2020\\GitRepos\\QMB6358F20\\demo_14_creating_documents\\LaTeX_from_python\\Paper')
 
-os.chdir("/home/pgbook/Documents/QMB6358F21/demo_14_creating_documents/LaTeX_from_python/Paper")
+# As above, if you use the virtual machine, with QMB6358F23
+# cloned to Documents, then this will be the correct path.
+os.chdir("/home/pgbook/Documents/QMB6358F23/demo_15_creating_documents/LaTeX_from_python/Paper")
 
 # Build the document from within the Paper folder.
 # The default version needs no options. 
