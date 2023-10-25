@@ -328,6 +328,28 @@ points(housing_data[housing_data[, 'earthquake'] == 1, 'house_price'],
 dev.off()
 
 
+# Version that makes a pdf file instead.
+fig_file_name <- 'predictions.pdf'
+out_file_name <- sprintf('%s/%s', fig_dir, fig_file_name)
+# setEPS()
+# postscript(out_file_name)
+pdf(out_file_name)
+
+# Plot the actual house prices against the regression model predictions.
+plot(housing_data[, 'house_price'], housing_data[, 'predictions'],
+     main = 'Regression Model Predictions',
+     xlab = 'House Price',
+     ylab = 'Prediction', pch = 16)
+points(housing_data[housing_data[, 'in_cali'] == 1, 'house_price'],
+       housing_data[housing_data[, 'in_cali'] == 1, 'predictions'],
+       col = 'green', pch = 16)
+points(housing_data[housing_data[, 'earthquake'] == 1, 'house_price'],
+       housing_data[housing_data[, 'earthquake'] == 1, 'predictions'],
+       col = 'red', pch = 16)
+
+dev.off()
+
+
 ##################################################
 # Add some regression lines to compare
 # the predictions to the actual observations.
@@ -392,6 +414,34 @@ fig_file_name <- 'regression.eps'
 out_file_name <- sprintf('%s/%s', fig_dir, fig_file_name)
 setEPS()
 postscript(out_file_name)
+
+plot(housing_data[, 'income'], housing_data[, 'house_price'],
+     main = 'Regression Model Predictions',
+     xlab = 'Income',
+     ylab = 'House Price', pch = 16)
+points(housing_data[housing_data[, 'in_cali'] == 1, 'income'],
+       housing_data[housing_data[, 'in_cali'] == 1, 'house_price'],
+       col = 'green', pch = 16)
+points(housing_data[housing_data[, 'earthquake'] == 1, 'income'],
+       housing_data[housing_data[, 'earthquake'] == 1, 'house_price'],
+       col = 'red', pch = 16)
+# Plot regression lines.
+lines(income_grid, reg_line_not_cali,
+      lwd = 3, col = 'black')
+lines(income_grid, reg_line_in_cali,
+      lwd = 3, col = 'green')
+lines(income_grid, reg_line_earthquake,
+      lwd = 3, col = 'red')
+# The dev.off() closes the file for the plot.
+dev.off()
+
+
+# Another version that creates a pdf file instead.
+fig_file_name <- 'regression.pdf'
+out_file_name <- sprintf('%s/%s', fig_dir, fig_file_name)
+# setEPS()
+# postscript(out_file_name)
+pdf(out_file_name)
 
 plot(housing_data[, 'income'], housing_data[, 'house_price'],
      main = 'Regression Model Predictions',
