@@ -40,7 +40,7 @@ import glob
 # Find out the current directory.
 os.getcwd()
 # Change to a new directory.
-os.chdir('C:\\Users\\le279259\\Documents\\GitHub\\QMB6358F23\\assignment_06')
+# os.chdir('C:\\Users\\le279259\\Documents\\GitHub\\QMB6358F23\\assignment_06')
 # Check that the change was successful.
 os.getcwd()
 
@@ -60,7 +60,7 @@ housing_full = pd.read_csv('housing_data/housing_data_1.csv')
 
 
 # Calculate summary statistics for your data.
-housing_full.describe()
+print(housing_full.describe())
 # Use this to check whether your data handling is working correctly.
 
 
