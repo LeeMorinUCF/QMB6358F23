@@ -26,7 +26,8 @@ rm(list=ls(all=TRUE))
 
 # Set working directory.
 # wd_path <- '/path/to/your/folder'
-wd_path <- 'C:/Users/le279259/OneDrive - University of Central Florida/Documents/Teaching/QMB6358_Fall_2021/GitRepo/QMB6358F21/demo_20_review'
+# wd_path <- 'C:/Users/le279259/OneDrive - University of Central Florida/Documents/Teaching/QMB6358_Fall_2021/GitRepo/QMB6358F21/demo_20_review'
+wd_path <- "~/Teaching/UCF_QMB6358/QMB_6358_Fall_2023/GitHub/QMB6358F23/final_exam_2020"
 
 setwd(wd_path)
 
